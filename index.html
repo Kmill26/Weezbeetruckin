@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weezbeetruckin | Hot Shot Trucking Houston, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #162133;
+      --muted: #4b5f78;
+      --bee: #ffc22d;
+      --bee-dark: #101828;
+      --honey: #ff8c24;
+      --card: #ffffff;
+      --line: #d8e3ef;
+      --bg: #f5f9ff;
+      --accent: #2458d5;
+      --workwear: #214b9a;
+      --ok: #0e7b68;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 520px at 95% -5%, #ffe7a9 0%, transparent 62%),
+        radial-gradient(860px 420px at -10% 20%, #d3e4ff 0%, transparent 64%),
+        var(--bg);
+      line-height: 1.5;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        repeating-linear-gradient(
+          103deg,
+          transparent 0 130px,
+          rgba(139, 167, 207, 0.09) 130px 132px,
+          transparent 132px 260px
+        ),
+        repeating-linear-gradient(
+          -24deg,
+          transparent 0 220px,
+          rgba(156, 182, 221, 0.08) 220px 222px,
+          transparent 222px 440px
+        );
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.22));
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.18;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='180' viewBox='0 0 220 180'%3E%3Cg fill='none' stroke='%231f3f7f' stroke-width='2.2' stroke-linecap='round'%3E%3Cellipse cx='72' cy='64' rx='11' ry='8'/%3E%3Cellipse cx='92' cy='64' rx='11' ry='8'/%3E%3Ccircle cx='82' cy='86' r='13'/%3E%3Cpath d='M74 84h16M74 89h16'/%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='220' viewBox='0 0 280 220'%3E%3Cg fill='none' stroke='%232458d5' stroke-width='1.8' stroke-linecap='round' opacity='0.9'%3E%3Cpath d='M28 188 C78 142 118 210 176 162 C214 130 236 154 258 120'/%3E%3Cpath d='M42 200 C94 152 130 220 188 174 C224 146 248 166 272 134'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 210px 170px, 280px 220px;
+      background-position: 0 0, 140px 100px;
+      animation: bgDrift 45s linear infinite;
+    }
+
+    @keyframes bgDrift {
+      0% {
+        background-position: 0 0, 140px 100px;
+      }
+      100% {
+        background-position: -220px 240px, 20px 360px;
+      }
+    }
+
+    .container { width: min(1140px, 92%); margin: 0 auto; }
+    header, main, footer { position: relative; z-index: 1; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #f0cf80;
+      background:
+        radial-gradient(800px 200px at 70% 92%, rgba(255, 255, 255, 0.55) 0%, transparent 70%),
+        linear-gradient(140deg, #fff7df 0%, #ffd76d 58%, #ffbe55 100%);
+      padding: 3.1rem 0 3.2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    .brand {
+      display: inline-block;
+      padding: 0.45rem 0.84rem;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 8px 14px rgba(17, 24, 39, 0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Baloo 2", "Inter", sans-serif;
+      font-size: clamp(2.3rem, 5.2vw, 4.3rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 1rem 0 0;
+      max-width: 65ch;
+      color: #213145;
+      font-size: 1.06rem;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.35rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      padding: 0.78rem 1.08rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #17263e 0%, #0f182a 100%);
+      color: #fff;
+      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.2);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #0f182a;
+      border-color: #c8d6e7;
+      box-shadow: 0 10px 16px rgba(31, 54, 91, 0.1);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+    }
+
+    .stats {
+      margin-top: 1.1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.7rem;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid #f3d790;
+      border-radius: 13px;
+      padding: 0.7rem;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(31, 41, 55, 0.08);
+    }
+
+    .stat b { display: block; font-size: 1.14rem; font-family: "Baloo 2", "Inter", sans-serif; }
+    .stat span { font-size: 0.8rem; color: #42566e; }
+
+    .truck-scene {
+      background: #fff;
+      border: 1px solid #efd79b;
+      border-radius: 22px;
+      padding: 1.1rem;
+      box-shadow: 0 20px 34px rgba(23, 37, 84, 0.16);
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 270px;
+      border-radius: 18px;
+      border: 1px solid #d8e5f7;
+      background:
+        radial-gradient(280px 110px at 20% 92%, #dbeafe 0%, transparent 70%),
+        radial-gradient(260px 90px at 82% 88%, #e5f0ff 0%, transparent 70%),
+        linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      overflow: hidden;
+    }
+
+    .hero-cover-img {
+      width: 100%;
+      height: 100%;
+      min-height: 270px;
+      object-fit: cover;
+      display: block;
+    }
+
+    main section { padding: 2.6rem 0; }
+    h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-family: "Baloo 2", "Inter", sans-serif;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    .section-lead {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      max-width: 70ch;
+      font-size: 0.97rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.05rem;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.05rem;
+    }
+
+    .review-card {
+      border-top: 6px solid #f6be3c;
+    }
+
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+
+    .review-meta {
+      margin-top: 0.8rem;
+      font-size: 0.86rem;
+      color: #415978;
+      font-weight: 600;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 12px 26px rgba(17, 24, 39, 0.06);
+    }
+
+    .service-card {
+      border-left: 6px solid #f8be35;
+      padding: 1.05rem 1rem;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+
+    .card h3 { margin: 0 0 0.45rem; font-size: 1.08rem; }
+    .card p { margin: 0; color: #334155; }
+
+    .drivers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.05rem;
+    }
+
+    .driver-card {
+      background:
+        radial-gradient(520px 80px at 50% 0%, #fff6d7 0%, transparent 70%),
+        #fff;
+    }
+
+    .driver-title {
+      margin-top: 0.6rem;
+      margin-bottom: 0;
+      font-weight: 800;
+      font-size: 1.08rem;
+    }
+
+    .driver-sub { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.92rem; }
+    .bee-svg { width: 100%; max-width: 260px; display: block; margin: 0 auto; filter: drop-shadow(0 6px 10px rgba(15, 23, 42, 0.12)); }
+    .driver-photo {
+      width: 100%;
+      max-width: 260px;
+      height: 250px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 7px 12px rgba(15, 23, 42, 0.15));
+    }
+
+    .rate-wrap {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      overflow: auto;
+    }
+
+    table { border-collapse: collapse; width: 100%; min-width: 700px; }
+    th, td { padding: 0.74rem 0.8rem; text-align: left; border-bottom: 1px solid #e8edf3; }
+    th { background: #f3f7fd; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.03em; }
+    .discount { color: var(--ok); font-weight: 700; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.05rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #c6d2e2;
+      border-radius: 10px;
+      padding: 0.68rem 0.75rem;
+      font: inherit;
+      background: #fff;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #2d68ea;
+      box-shadow: 0 0 0 3px rgba(45, 104, 234, 0.16);
+    }
+
+    textarea { min-height: 110px; resize: vertical; }
+    .field { margin-bottom: 0.75rem; }
+
+    .estimate-result {
+      margin-top: 0.8rem;
+      border-radius: 13px;
+      background: #ecfff9;
+      border: 1px solid #a6e4d1;
+      padding: 0.85rem;
+      color: #115e59;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .estimate-result b { font-size: 1.25rem; color: #0f766e; }
+    .error { color: #b91c1c; font-weight: 600; margin-top: 0.7rem; min-height: 1.2rem; }
+    .helper { color: var(--muted); font-size: 0.88rem; margin: 0; }
+
+    .panel-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.5rem;
+      color: #0f2238;
+      font-size: 1.16rem;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      border: 1px solid #ccdbef;
+      border-radius: 11px;
+      padding: 0.65rem 0.7rem;
+      background: #f8fbff;
+      margin-bottom: 0.75rem;
+    }
+
+    .toggle-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #19314f;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 52px;
+      height: 30px;
+      display: inline-block;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      border-radius: 999px;
+      background: #bfd0ea;
+      transition: 0.2s;
+    }
+
+    .slider:before {
+      content: "";
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      left: 3px;
+      top: 3px;
+      border-radius: 50%;
+      background: #fff;
+      transition: 0.2s;
+      box-shadow: 0 2px 6px rgba(16, 24, 40, 0.2);
+    }
+
+    .toggle-switch input:checked + .slider {
+      background: #2f67da;
+    }
+
+    .toggle-switch input:checked + .slider:before {
+      transform: translateX(22px);
+    }
+
+    .stack {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0.2rem 0 0.8rem;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .trust-item {
+      border-radius: 12px;
+      border: 1px solid #ccdbef;
+      background: #f8fbff;
+      padding: 0.72rem 0.78rem;
+      font-size: 0.88rem;
+      color: #1f395c;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .chip {
+      font-size: 0.77rem;
+      border-radius: 999px;
+      border: 1px solid #c8d8ef;
+      background: #f7fbff;
+      padding: 0.28rem 0.56rem;
+      font-weight: 600;
+      color: #214062;
+    }
+
+    footer {
+      margin-top: 1.4rem;
+      border-top: 1px solid #d3e0ee;
+      background: #f2f7ff;
+      padding: 1.6rem 0 2.2rem;
+      color: #334155;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="brand">Houston Hot Shot Freight</span>
+        <h1>Weezbeetruckin</h1>
+        <p>Storybook energy, blue-collar reliability. We handle flat bed loads and trailer pulls from Houston to lanes across the continental U.S. with fast dispatch and honest pricing.</p>
+        <div class="hero-actions">
+          <a href="#estimator" class="btn btn-primary">Build My Estimate</a>
+          <a href="#contact" class="btn btn-secondary">Request a Call Back</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>10% Lower</b><span>Than market average</span></div>
+          <div class="stat"><b>Same Day</b><span>Hot shot options</span></div>
+          <div class="stat"><b>3 Drivers</b><span>Family team on deck</span></div>
+        </div>
+      </div>
+      <div class="truck-scene">
+        <div class="hero-art" role="img" aria-label="Continental U.S. service visual with bee crew">
+          <img src="./Cover.jpg" alt="Weezbeetruckin cover artwork" class="hero-cover-img" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="services-title">
+      <h2 id="services-title">What We Haul</h2>
+      <p class="section-lead">Built for hands-on freight work with playful brand personality. We stay responsive, communicate clearly, and get your load delivered right.</p>
+      <div class="grid-3">
+        <article class="card service-card">
+          <h3>Flat Bed Loads</h3>
+          <p>Equipment, building materials, pallets, and oversized freight with secure tie-down and on-time delivery windows.</p>
+        </article>
+        <article class="card service-card">
+          <h3>Trailer Pulls</h3>
+          <p>Gooseneck and bumper pull services for local and regional moves with route planning for speed and safety.</p>
+        </article>
+        <article class="card service-card">
+          <h3>Urgent Hot Shot Freight</h3>
+          <p>When your shipment cannot wait, we prioritize dispatch and communication from pickup to final drop.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="drivers-title">
+      <h2 id="drivers-title">Meet the Bee Crew</h2>
+      <p class="section-lead">Three owner-operator personalities, one work ethic: show up, secure it, and deliver.</p>
+      <div class="drivers">
+        <article class="card driver-card">
+          <img src="./Troybee.png" alt="Troy Miller bee driver" class="driver-photo" />
+          <p class="driver-title">Troy Miller</p>
+        </article>
+        <article class="card driver-card">
+          <img src="./Libbybee.png" alt="Libby Miller bee driver" class="driver-photo" />
+          <p class="driver-title">Libby Miller</p>
+        </article>
+        <article class="card driver-card">
+          <img src="./Marceybee.png" alt="Marcey Tardy bee driver" class="driver-photo" />
+          <p class="driver-title">Marcey Tardy</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="rates-title">
+      <h2 id="rates-title">Houston Rates (10% Below Market)</h2>
+      <div class="rate-wrap card">
+        <table>
+          <thead>
+            <tr>
+              <th>Service Type</th>
+              <th>Houston Average ($/mile)</th>
+              <th>Weezbeetruckin Rate ($/mile)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Standard Flatbed (LTL Partials)</td><td>$2.00</td><td class="discount">$1.80</td></tr>
+            <tr><td>Full Flatbed Loads</td><td>$2.50</td><td class="discount">$2.25</td></tr>
+            <tr><td>40ft Gooseneck Trailer Pull</td><td>$2.75</td><td class="discount">$2.48</td></tr>
+            <tr><td>30-35ft Gooseneck Trailer Pull</td><td>$2.25</td><td class="discount">$2.03</td></tr>
+            <tr><td>Bumper Pull Trailer</td><td>$1.88</td><td class="discount">$1.69</td></tr>
+            <tr><td>Texas Oilfield / Premium Lane Hot Shot</td><td>$3.25</td><td class="discount">$2.93</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="helper">Market baselines use common 2026 Houston/Texas hot shot ranges, averaged and discounted by 10%.</p>
+    </section>
+
+    <section aria-labelledby="trust-title">
+      <h2 id="trust-title">Why Shippers Choose Us</h2>
+      <div class="trust-strip">
+        <div class="trust-item">Transparent estimate math</div>
+        <div class="trust-item">Continental U.S. coverage</div>
+        <div class="trust-item">Fast response windows</div>
+        <div class="trust-item">Family-owned accountability</div>
+      </div>
+    </section>
+
+    <section aria-labelledby="reviews-title">
+      <h2 id="reviews-title">Customer Reviews</h2>
+      <p class="section-lead">Add your real customer testimonials here over time. This section adds immediate trust and credibility for new visitors.</p>
+      <div class="review-grid">
+        <article class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Our load got picked up same day and delivered exactly when promised. Communication was solid from start to finish."</p>
+          <p class="review-meta">- Operations Manager, Industrial Supply Client</p>
+        </article>
+        <article class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Fair pricing, no surprises, and a professional crew. We’ve used Weezbeetruckin for repeat trailer pulls."</p>
+          <p class="review-meta">- Dispatch Coordinator, Construction Vendor</p>
+        </article>
+        <article class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Estimator was close to final invoice, and they kept us updated at each stage of the run. Highly recommended."</p>
+          <p class="review-meta">- Logistics Lead, Regional Freight Partner</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="split">
+      <article id="estimator" class="card" aria-labelledby="estimate-title">
+        <h2 id="estimate-title" class="panel-title">Shipment Estimator</h2>
+        <div class="stack">
+          <span class="chip">Continental U.S.</span>
+          <span class="chip">Route-mile based</span>
+          <span class="chip">Deadhead aware</span>
+        </div>
+        <p class="helper">Enter pickup and delivery locations in the continental U.S. to calculate route miles and an all-in estimate.</p>
+        <form id="estimate-form">
+          <div class="field">
+            <label for="start">Starting Location</label>
+            <input id="start" name="start" required placeholder="e.g., Houston, TX 77001" />
+          </div>
+          <div class="field">
+            <label for="end">Ending Location</label>
+            <input id="end" name="end" required placeholder="e.g., Dallas, TX 75201" />
+          </div>
+          <div class="field">
+            <label for="service">Service Type</label>
+            <select id="service" name="service">
+              <option value="1.80">Standard Flatbed (LTL) - $1.80/mi</option>
+              <option value="2.25" selected>Full Flatbed Load - $2.25/mi</option>
+              <option value="2.48">40ft Gooseneck Trailer Pull - $2.48/mi</option>
+              <option value="2.03">30-35ft Gooseneck Trailer Pull - $2.03/mi</option>
+              <option value="1.69">Bumper Pull Trailer - $1.69/mi</option>
+              <option value="2.93">Premium Texas Lane - $2.93/mi</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="deadhead">Deadhead Factor (%)</label>
+            <input id="deadhead" name="deadhead" type="number" min="0" max="50" step="1" value="12" />
+          </div>
+          <div class="field">
+            <label for="fuel">Fuel / Ops Surcharge (%)</label>
+            <input id="fuel" name="fuel" type="number" min="0" max="30" step="1" value="8" />
+          </div>
+          <div class="field">
+            <label for="minimum">Minimum Trip Charge ($)</label>
+            <input id="minimum" name="minimum" type="number" min="0" step="25" value="350" />
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Include Return Leg</span>
+            <label class="toggle-switch" for="return-leg">
+              <input id="return-leg" name="returnLeg" type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <button class="btn btn-primary" type="submit">Calculate Estimate</button>
+          <p id="estimate-error" class="error" aria-live="polite"></p>
+          <div id="estimate-result" class="estimate-result" aria-live="polite"></div>
+          <p class="helper">For best reliability, host this page on a domain (not local file mode) and connect a paid routing API key.</p>
+        </form>
+      </article>
+
+      <article id="contact" class="card" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="panel-title">Contact Weezbeetruckin</h2>
+        <div class="stack">
+          <span class="chip">Fast follow-up</span>
+          <span class="chip">Family team</span>
+          <span class="chip">Load updates</span>
+        </div>
+        <p class="helper">Drop your shipment details and your team can follow up quickly.</p>
+        <form>
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="company">Company (Optional)</label>
+            <input id="company" name="company" placeholder="Company name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required />
+          </div>
+          <div class="field">
+            <label for="message">Shipment Details</label>
+            <textarea id="message" name="message" placeholder="Pickup location, drop-off location, freight type, timing..."></textarea>
+          </div>
+          <button class="btn btn-secondary" type="button">Submit Request</button>
+          <p class="helper">Note: You will add the final email and phone details later.</p>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Weezbeetruckin</strong> | Houston, TX | Continental U.S. Lanes<br />
+      Flat Bed Loads | Trailer Pulls | Hot Shot Freight | Family-Owned<br />
+      Phone: coming soon | Email: coming soon
+    </div>
+  </footer>
+
+  <script>
+    const estimateForm = document.getElementById("estimate-form");
+    const estimateError = document.getElementById("estimate-error");
+    const estimateResult = document.getElementById("estimate-result");
+    const ORS_API_KEY = "";
+
+    function isContinentalUS(lat, lon) {
+      return lat >= 24.396308 && lat <= 49.384358 && lon >= -124.848974 && lon <= -66.885444;
+    }
+
+    async function geocodeLocation(query) {
+      const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q=" + encodeURIComponent(query);
+      const response = await fetch(url, {
+        headers: { "Accept": "application/json" }
+      });
+      if (!response.ok) throw new Error("Could not search location.");
+      const data = await response.json();
+      if (!data.length) throw new Error("Location not found: " + query);
+      const lat = Number(data[0].lat);
+      const lon = Number(data[0].lon);
+      if (!isContinentalUS(lat, lon)) {
+        throw new Error("Estimator supports continental U.S. locations only.");
+      }
+      return { lat: lat, lon: lon, label: data[0].display_name };
+    }
+
+    async function getRoadDistanceMiles(start, end) {
+      if (ORS_API_KEY) {
+        const orsResponse = await fetch("https://api.openrouteservice.org/v2/directions/driving-car", {
+          method: "POST",
+          headers: {
+            "Authorization": ORS_API_KEY,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            coordinates: [[start.lon, start.lat], [end.lon, end.lat]]
+          })
+        });
+        if (orsResponse.ok) {
+          const orsData = await orsResponse.json();
+          const meters = orsData.routes && orsData.routes[0] && orsData.routes[0].summary && orsData.routes[0].summary.distance;
+          if (meters) return meters * 0.000621371;
+        }
+      }
+
+      const osrmUrl =
+        "https://router.project-osrm.org/route/v1/driving/" +
+        start.lon + "," + start.lat + ";" + end.lon + "," + end.lat + "?overview=false";
+      const osrmResponse = await fetch(osrmUrl);
+      if (!osrmResponse.ok) throw new Error("Could not calculate route distance.");
+      const osrmData = await osrmResponse.json();
+      if (!osrmData.routes || !osrmData.routes.length) throw new Error("No drivable route found.");
+      return osrmData.routes[0].distance * 0.000621371;
+    }
+
+    estimateForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      estimateError.textContent = "";
+      estimateResult.style.display = "none";
+      estimateResult.textContent = "";
+
+      const startInput = document.getElementById("start").value.trim();
+      const endInput = document.getElementById("end").value.trim();
+      const rate = Number(document.getElementById("service").value);
+      const deadheadPct = Number(document.getElementById("deadhead").value) / 100;
+      const fuelPct = Number(document.getElementById("fuel").value) / 100;
+      const minimumCharge = Number(document.getElementById("minimum").value);
+      const includeReturnLeg = document.getElementById("return-leg").checked;
+
+      if (!startInput || !endInput) {
+        estimateError.textContent = "Please enter both start and end locations.";
+        return;
+      }
+
+      try {
+        estimateError.textContent = "Calculating route and estimate...";
+        const [start, end] = await Promise.all([
+          geocodeLocation(startInput),
+          geocodeLocation(endInput)
+        ]);
+        const loadedMiles = await getRoadDistanceMiles(start, end);
+        const chargeableMiles = includeReturnLeg ? loadedMiles * 2 : loadedMiles;
+        const billedMiles = chargeableMiles * (1 + deadheadPct);
+        const linehaul = billedMiles * rate;
+        const total = Math.max(minimumCharge, linehaul * (1 + fuelPct));
+
+        estimateError.textContent = "";
+        estimateResult.style.display = "block";
+        estimateResult.innerHTML =
+          "Route miles: <b>" + loadedMiles.toFixed(1) + " miles</b><br>" +
+          "Return leg: " + (includeReturnLeg ? "Included (round trip)" : "Not included (one way)") + "<br>" +
+          "Billed miles (with deadhead): " + billedMiles.toFixed(1) + " miles<br>" +
+          "Rate selected: $" + rate.toFixed(2) + "/mile<br>" +
+          "Estimated total: <b>$" + total.toFixed(2) + "</b><br>" +
+          "<span class='helper'>Includes deadhead, surcharge, and minimum trip charge. Final invoice may vary by trailer type, cargo weight, tolls, and timing.</span>";
+      } catch (error) {
+        estimateError.textContent = error.message || "Could not calculate estimate. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html>
